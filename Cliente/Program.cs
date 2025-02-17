@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using Microsoft.VisualBasic;
 using SNF_definition;
 using System.IO;
+using System.Threading;
 
 namespace Cliente
 {
@@ -32,6 +33,7 @@ namespace Cliente
             try
             {
                 bool firstACK = false; // booleano para controlar si se ha recibido el primer ACK
+                Thread.Sleep(2000); // Para que el servidor tenga tiempo de iniciarse
                 while (!firstACK) // hasta que no se reciba el primer ACK, no se puede enviar información
                 {
                     // recibir primer ACK
