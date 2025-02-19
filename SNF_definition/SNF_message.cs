@@ -1,10 +1,16 @@
 ﻿using System;
 using System.IO;
 
+
+/* Leer anotaciones documento de cara a memoria y comentar en la 
+ * memoria lo que se podria haber mejorado aunque al campus subir este archivo
+ * */
+
 namespace SNF_definition
 {
     public class SNF_message
     {
+        // Justificar memoria por que escogemos negativos
         public sbyte _sequence; // _sequence ahora puede ser un byte que contemple valores negativos
         public  sbyte? _number;  //_number puede ser null si se trata de un ACK
 
@@ -19,6 +25,8 @@ namespace SNF_definition
             get { return _number; }
             set { _number = value; }
         }
+
+        // Documentar que constructor vacio no es un problema en este caso
 
         // Constructor para mensaje DATA
         public SNF_message(sbyte seq, sbyte num)

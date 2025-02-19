@@ -19,6 +19,7 @@ namespace Cliente
 
         public void Run(int serverPort)
         {
+        // Acordarse borrar numeros magicos
             IPAddress server = IPAddress.Parse("127.0.0.1"); // direccion ip a la que enviaremos el mensaje (ip local)
             IPEndPoint endPoint = new IPEndPoint(server, serverPort);
 
@@ -32,6 +33,7 @@ namespace Cliente
 
             try
             {
+                // Booleano redundante, modificar y tratar de evitar
                 bool firstACK = false; // booleano para controlar si se ha recibido el primer ACK
                 Thread.Sleep(2000); // Para que el servidor tenga tiempo de iniciarse
                 while (!firstACK) // hasta que no se reciba el primer ACK, no se puede enviar información
@@ -70,6 +72,7 @@ namespace Cliente
                     sendFile = Console.ReadLine().ToLower();
                 }
 
+                //Mejor separar funcionalidad entrada porque es distinta de el hecho de enviar porque repites codigo
                 // Queremos leer fichero
                 if (sendFile == "yes")
                 {
